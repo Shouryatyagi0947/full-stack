@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <tittle>image switcher (toggle)</tittle>
+</head>
+<body>
+    <img id="my image" src="https://www.bing.com/images/search?view=detailV2&ccid=Hwja7ewg&id=CBC85F556ADB3C2C69D0F228C5F681B3A45CE6E7&thid=OIP.Hwja7ewgTZgC0sSTXnZM3QHaEK&mediaurl=https%3a%2f%2fmedia.evo.co.uk%2fimage%2fupload%2fv1581606140%2fevo%2f2020%2f02%2fFord+Mustang+Mach+1-5.jpg&exph=1800&expw=3200&q=mustang+ford+1969&FORM=IRPRST&ck=C40BD919EAA81C5ABE02D29E96598BCD&selectedIndex=1&itb=0" width="200">
+    <br>
+    <button onclick="toggleimage()">switch image</button>
+    <script>
+        let isfirstimage=true;
+        function toggleimage9(){
+            let img = document.getelementbyid("my image");
+            isfirstimage =!isfirstimage;
+            img.src = isFirstImage ? "https://www.bing.com/images/search?view=detailV2&ccid=tvzCkD2u&id=159F868B2D30EA4273D4241AA8F8E3E59879CCA3&thid=OIP.tvzCkD2uB8w5kHZt4S19cQHaE7&mediaurl=https%3a%2f%2fi.dailymail.co.uk%2f1s%2f2021%2f02%2f17%2f08%2f39360842-9266593-McLaren_s_planet_preserving_supercar_This_is_the_new_Artura_the_-a-19_1613550763826.jpg&exph=640&expw=962&q=mclaren&FORM=IRPRST&ck=F0950928E3844854A5385FD08C81916D&selectedIndex=1&itb=0 " :
+            "https://www.bing.com/images/search?view=detailV2&ccid=Hwja7ewg&id=CBC85F556ADB3C2C69D0F228C5F681B3A45CE6E7&thid=OIP.Hwja7ewgTZgC0sSTXnZM3QHaEK&mediaurl=https%3a%2f%2fmedia.evo.co.uk%2fimage%2fupload%2fv1581606140%2fevo%2f2020%2f02%2fFord+Mustang+Mach+1-5.jpg&exph=1800&expw=3200&q=mustang+ford+1969&FORM=IRPRST&ck=C40BD919EAA81C5ABE02D29E96598BCD&selectedIndex=1&itb=0";
+  }
+    </script>
+
+    
+</body>
+</html>

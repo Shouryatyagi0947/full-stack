@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Green Food Agro | Ayurvedic Syrups & Powders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🌿</span>
+                <div class="logo-text">
+                    <h1>Dev Green Food Agro</h1>
+                    <p>Pure Ayurvedic Wellness</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button onclick="searchProducts()">🔍</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Embrace Natural Healing</h2>
+            <p>Discover the ancient wisdom of Ayurveda with our premium range of syrups and powders, crafted from 100% natural ingredients.</p>
+            <a href="#products" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <span class="feature-icon">🌱</span>
+                <h3>100% Natural</h3>
+                <p>Pure herbs and ingredients</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✓</span>
+                <h3>GMP Certified</h3>
+                <p>Quality assured products</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🚚</span>
+                <h3>Free Delivery</h3>
+                <p>On orders above ₹500</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💯</span>
+                <h3>Authentic Ayurveda</h3>
+                <p>Traditional formulations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('syrup')">Syrups</button>
+                <button class="filter-btn" onclick="filterProducts('powder')">Powders</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Dev Green Food Agro</h2>
+                <p>At Dev Green Food Agro, we are committed to bringing you the finest Ayurvedic products that have been trusted for generations. Our products are manufactured using traditional methods combined with modern quality standards.</p>
+                <ul class="about-list">
+                    <li>✓ Established with a vision of natural wellness</li>
+                    <li>✓ Sourced from organic farms across India</li>
+                    <li>✓ Lab-tested for purity and potency</li>
+                    <li>✓ No artificial colors or preservatives</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <div class="about-img-placeholder">🌿</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"The Ashwagandha powder has significantly improved my energy levels. Highly recommend Dev Green Food Agro!"</p>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>Delhi</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Excellent quality products at reasonable prices. The digestive syrup works wonders for my family."</p>
+                    <div class="testimonial-author">
+                        <strong>Priya Sharma</strong>
+                        <span>Mumbai</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finally found authentic Ayurvedic products. The Tulsi syrup has helped boost our immunity naturally."</p>
+                    <div class="testimonial-author">
+                        <strong>Amit Patel</strong>
+                        <span>Ahmedabad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Green Valley Road, Industrial Area<br>New Delhi - 110001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@devgreenfoodagro.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" onsubmit="submitContactForm(event)">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone">
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>🌿 Dev Green Food Agro</h4>
+                    <p>Your trusted source for authentic Ayurvedic products. Bringing natural wellness to every home.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" onclick="filterProducts('syrup')">Ayurvedic Syrups</a></li>
+                        <li><a href="#" onclick="filterProducts('powder')">Herbal Powders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                        <a href="#">▶️</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dev Green Food Agro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
