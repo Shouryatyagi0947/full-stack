@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon.in - Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-top">
+    <!-- Logo -->
+    <a class="nav-logo" onclick="scrollToTop()">
+      <div class="nav-logo-text">amazon<span>.</span><span style="color:white">in</span></div>
+    </a>
+
+    <!-- Deliver to -->
+    <div class="nav-deliver">
+      <span>📍 Deliver to</span>
+      <b>India</b>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar-wrap">
+      <div class="search-bar-inner">
+        <select class="search-category">
+          <option>All</option>
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Books</option>
+          <option>Home</option>
+          <option>Sports</option>
+          <option>Grocery</option>
+        </select>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search Amazon.in" oninput="handleSearch(this.value)" onblur="hideSearch()">
+        <button class="search-btn" onclick="doSearch()">🔍</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <!-- Flag -->
+    <span class="nav-flag">🇮🇳</span>
+
+    <!-- Sign In -->
+    <div class="nav-link">
+      <small>Hello, Sign in</small>
+      <b>Account & Lists ▾</b>
+    </div>
+
+    <!-- Returns -->
+    <div class="nav-link">
+      <small>Returns</small>
+      <b>& Orders</b>
+    </div>
+
+    <!-- Cart -->
+    <div class="nav-link nav-cart" onclick="toggleCart()">
+      <span class="cart-count" id="cartCount">0</span>
+      🛒 Cart
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="nav-bottom">
+    <a onclick="">☰ All</a>
+    <a onclick="">Today's Deals</a>
+    <a onclick="">Amazon Basics</a>
+    <a onclick="">Customer Service</a>
+    <a onclick="">Buy Again</a>
+    <a onclick="">Electronics</a>
+    <a onclick="">Fashion</a>
+    <a onclick="">Home & Kitchen</a>
+    <a onclick="">Books</a>
+    <a onclick="">Mobiles</a>
+    <a onclick="">Grocery</a>
+    <a onclick="">Toys</a>
+    <a onclick="">Sports</a>
+    <a onclick="">Prime</a>
+  </div>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="hero-banner">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide hero-slide-1">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-content">
+        <h1>🛍️ Great Indian Sale</h1>
+        <p>Massive discounts on millions of products</p>
+        <button class="hero-btn" onclick="scrollToDeals()">Shop Now →</button>
+      </div>
+    </div>
+    <div class="hero-slide hero-slide-2">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-content">
+        <h1>📱 New Launches</h1>
+        <p>Latest smartphones & gadgets at best prices</p>
+        <button class="hero-btn" onclick="scrollToDeals()">Explore Now →</button>
+      </div>
+    </div>
+    <div class="hero-slide hero-slide-3">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-content">
+        <h1>⚡ Lightning Deals</h1>
+        <p>Deals that last only hours — grab them fast!</p>
+        <button class="hero-btn" onclick="scrollToDeals()">View Deals →</button>
+      </div>
+    </div>
+    <div class="hero-slide hero-slide-4">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-content">
+        <h1>🎁 Prime Benefits</h1>
+        <p>Free delivery, exclusive deals & more</p>
+        <button class="hero-btn" onclick="">Try Prime Free →</button>
+      </div>
+    </div>
+  </div>
+  <button class="hero-prev" onclick="changeSlide(-1)">‹</button>
+  <button class="hero-next" onclick="changeSlide(1)">›</button>
+  <div class="hero-dots" id="heroDots">
+    <div class="hero-dot active" onclick="goToSlide(0)"></div>
+    <div class="hero-dot" onclick="goToSlide(1)"></div>
+    <div class="hero-dot" onclick="goToSlide(2)"></div>
+    <div class="hero-dot" onclick="goToSlide(3)"></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- CATEGORY GRID -->
+  <div class="category-grid">
+    <div class="category-card" onclick="">
+      <h3>Electronics</h3>
+      <div class="cat-images">
+        <div class="cat-img">📱</div>
+        <div class="cat-img">💻</div>
+        <div class="cat-img">🎧</div>
+        <div class="cat-img">📷</div>
+      </div>
+      <span class="see-more">See all deals</span>
+    </div>
+    <div class="category-card" onclick="">
+      <h3>Fashion</h3>
+      <div class="cat-images">
+        <div class="cat-img">👗</div>
+        <div class="cat-img">👟</div>
+        <div class="cat-img">👜</div>
+        <div class="cat-img">⌚</div>
+      </div>
+      <span class="see-more">See all deals</span>
+    </div>
+    <div class="category-card" onclick="">
+      <h3>Home & Kitchen</h3>
+      <div class="cat-images">
+        <div class="cat-img">🪑</div>
+        <div class="cat-img">🍳</div>
+        <div class="cat-img">🛁</div>
+        <div class="cat-img">💡</div>
+      </div>
+      <span class="see-more">See all deals</span>
+    </div>
+    <div class="category-card" onclick="">
+      <h3>Books & More</h3>
+      <div class="cat-images">
+        <div class="cat-img">📚</div>
+        <div class="cat-img">🎮</div>
+        <div class="cat-img">🎵</div>
+        <div class="cat-img">🧸</div>
+      </div>
+      <span class="see-more">See all deals</span>
+    </div>
+  </div>
+
+  <!-- TODAY'S DEALS -->
+  <div class="wide-section" id="dealsSection">
+    <div class="section-header">
+      <h2>Today's Deals</h2>
+      <a onclick="">See all deals</a>
+    </div>
+    <div class="deals-row" id="dealsRow"></div>
+  </div>
+
+  <!-- PROMO BANNERS -->
+  <div class="promo-grid">
+    <div class="promo-banner promo-1">
+      <span class="promo-emoji">📦</span>
+      <h3>Amazon Prime</h3>
+      <p>Free delivery on millions of items</p>
+      <a onclick="">Try 30 Days Free</a>
+    </div>
+    <div class="promo-banner promo-2">
+      <span class="promo-emoji">⚡</span>
+      <h3>Flash Sale</h3>
+      <p>Up to 80% off on top brands today only</p>
+      <a onclick="">Shop Flash Sale</a>
+    </div>
+    <div class="promo-banner promo-3">
+      <span class="promo-emoji">🌿</span>
+      <h3>Amazon Fresh</h3>
+      <p>Fresh groceries delivered in 2 hours</p>
+      <a onclick="">Order Now</a>
+    </div>
+  </div>
+
+  <!-- BESTSELLERS -->
+  <div class="wide-section">
+    <div class="section-header">
+      <h2>Best Sellers</h2>
+      <a onclick="">See all</a>
+    </div>
+    <div class="deals-row" id="bestsellersRow"></div>
+  </div>
+
+  <!-- RECENTLY VIEWED -->
+  <div class="wide-section">
+    <div class="section-header">
+      <h2>Inspired by your browsing</h2>
+    </div>
+    <div class="scroll-row" id="recentRow"></div>
+  </div>
+
+  <!-- MORE DEALS -->
+  <div class="wide-section">
+    <div class="section-header">
+      <h2>Deals in Electronics</h2>
+      <a onclick="">See all</a>
+    </div>
+    <div class="deals-row" id="electronicsRow"></div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-back-top" onclick="scrollToTop()">Back to top</div>
+  <div class="footer-links">
+    <div class="footer-col">
+      <h4>Get to Know Us</h4>
+      <a>Careers</a>
+      <a>Blog</a>
+      <a>About Amazon</a>
+      <a>Investor Relations</a>
+      <a>Amazon Devices</a>
+      <a>Amazon Science</a>
+    </div>
+    <div class="footer-col">
+      <h4>Make Money with Us</h4>
+      <a>Sell products on Amazon</a>
+      <a>Sell on Amazon Business</a>
+      <a>Sell apps on Amazon</a>
+      <a>Become an Affiliate</a>
+      <a>Advertise Your Products</a>
+      <a>Self-Publish with Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Amazon Payment Products</h4>
+      <a>Amazon Business Card</a>
+      <a>Shop with Points</a>
+      <a>Reload Your Balance</a>
+      <a>Amazon Currency Converter</a>
+      <a>Gift Cards</a>
+    </div>
+    <div class="footer-col">
+      <h4>Let Us Help You</h4>
+      <a>Amazon and COVID-19</a>
+      <a>Your Account</a>
+      <a>Your Orders</a>
+      <a>Shipping Rates & Policies</a>
+      <a>Returns & Replacements</a>
+      <a>Customer Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div style="font-size:22px;font-weight:bold;margin-bottom:8px;color:white;">amazon<span style="color:#FF9900">.</span>in</div>
+    © 2024 Amazon Clone — For Educational Purposes Only
+  </div>
+</footer>
+
+<!-- CART PANEL -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>🛒 Shopping Cart</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">Subtotal: <span id="cartTotal">₹0</span></div>
+    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span id="toastIcon">✅</span>
+  <span id="toastMsg">Added to cart!</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

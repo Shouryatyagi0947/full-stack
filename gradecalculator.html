@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="font-family: sans-serif; padding: 20px; max-width: 400px;">
+
+    <h3>Grade Calculator</h3>
+    <input type="number" id="count" placeholder="Number of subjects">
+    <button onclick="genFields()">Go</button>
+    
+    <div id="fields" style="margin: 15px 0;"></div>
+    <button id="calcBtn" onclick="calc()" style="display:none;">Calculate</button>
+    <h4 id="out"></h4>
+
+    <script>
+        function genFields() {
+            let num = parseInt(document.getElementById('count').value), html = '';
+            for (let i = 1; i <= num; i++) {
+                html += `Sub ${i}: <input type="number" class="mark" max="100" style="width:50px; margin:5px;"><br>`;
+            }
+            document.getElementById('fields').innerHTML = html;
+            document.getElementById('calcBtn').style.display = num ? 'block' : 'none';
+        }
+
+        function calc() {
+            let marks = document.querySelectorAll('.mark'), total = 0, fail = false;
+            marks.forEach(i => {
+                let m = parseFloat(i.value) || 0;
+                total += m;
+                if (m < 40) fail = true;
+            });
+            
+            let avg = total / marks.length;
+            let grade = avg >= 90 ? 'A' : avg >= 75 ? 'B' : avg >= 50 ? 'C' : avg >= 40 ? 'D' : 'F';
+            let passed = avg >= 40 && !fail;
+
+            document.getElementById('out').innerHTML = 
+                `Total: ${total} | Avg: ${avg.toFixed(1)}%<br>
+                 Grade: ${grade} | Status: ${passed ? 'PASS' : 'FAIL'}`;
+        }
+    </script>
+</body>
+</html>
